@@ -1,0 +1,113 @@
+:root {
+  --red-dark: #570303;
+  --red-mid: #8a0f06;
+  --red-bright: #ff0000;
+  --bg-dark: #18181b;
+  --text-light: #ffffff;
+  --bg-light: #f0f0f0;
+  --shadow-glow: 0 0 10px rgba(255,0,0,0.5);
+}
+
+/* 1. MOBILE par défaut */
+body {
+  margin: 0 16px;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+}
+
+/* 2. HEADER MOBILE */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  padding: 16px 0;
+  border-bottom: 1px solid var(--red-mid);
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* 3. BOUTON MENU MOBILE */
+.menu-toggle {
+  display: block;
+  background: var(--red-bright);
+  border: 1px solid var(--red-dark);
+  color: var(--text-light);
+  font-size: 24px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  box-shadow: var(--shadow-glow);
+}
+
+/* 4. NAV MOBILE */
+.nav {
+  position: fixed;
+  inset: 70px 0 0 0;
+  background: var(--bg-dark);
+  padding: 20px 16px;
+  transform: translateX(-100%);
+  transition: transform 0.3s ease;
+}
+
+.nav.open {
+  transform: translateX(0);
+}
+
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-list li {
+  margin-bottom: 16px;
+}
+
+.nav-list li a {
+  text-decoration: none;
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.nav-list li a:hover {
+  color: var(--red-bright);
+}
+
+/* 5. DESKTOP (à partir de 768px) */
+@media (min-width: 768px) {
+  .header {
+    background-color: var(--bg-dark);
+    padding: 16px 24px;
+    justify-content: flex-start;
+  }
+
+  .header h1 {
+    font-size: 1.5rem;
+  }
+
+  .menu-toggle {
+    display: none;
+  }
+
+  .nav {
+    position: static;
+    transform: none;
+    background: var(--bg-dark);
+    margin-left: auto;
+  }
+
+  .nav-list {
+    display: flex;
+    gap: 32px;
+  }
+
+  .nav-list li a {
+    font-size: 1rem;
+  }
+}
