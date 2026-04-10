@@ -1,9 +1,35 @@
-// On récupère le bouton et le menu
-const menuToggle = document.getElementById("menu-toggle");
-const mainNav = document.getElementById("main-nav");
+document.addEventListener('DOMContentLoaded', function() {
+  const menuToggle = document.getElementById("menu-toggle");
+  const mainNav = document.getElementById("main-nav");
 
-// On ajoute un écouteur d’événement au clic
-menuToggle.addEventListener("click", function () {
-  // On bascule la classe open sur le nav
-  mainNav.classList.toggle("open");
+  // Toggle principal
+  menuToggle.addEventListener("click", function () {
+    mainNav.classList.toggle("open");
+    toggleIcon();
+  });
+
+  // Fonction icône (hamburger ↔ croix)
+  function toggleIcon() {
+    if (mainNav.classList.contains("open")) {
+      menuToggle.innerHTML = '<i class="fas fa-times"></i>';
+    } else {
+      menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+  }
+
+  // Fermer au clic sur lien
+  document.querySelectorAll('.nav-list a').forEach(link => {
+    link.addEventListener('click', function() {
+      mainNav.classList.remove('open');
+      toggleIcon();
+    });
+  });
+
+  // Fermer en cliquant dehors (sur overlay)
+  mainNav.addEventListener('click', function(e) {
+    if (e.target === mainNav) {
+      mainNav.classList.remove('open');
+      toggleIcon();
+    }
+  });
 });

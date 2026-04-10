@@ -4,27 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Navbar mobile-first</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
   <header class="header">
-    <h1>Mon site</h1>
-    <button id="menu-toggle" class="menu-toggle" aria-label="Ouvrir/fermer le menu">
-      ☰
+    <h1 class="logo">
+        <img src="img/favicon-120x120.png" alt="logomonsite">
+    </h1>
+
+    <button id="menu-toggle" class="menu-toggle">
+        <i class="fas fa-bars"></i>
     </button>
+
     <nav id="main-nav" class="nav">
       <ul class="nav-list">
-        <li><a href="#accueil">Accueil</a></li>
-        <li><a href="#projets">Projets</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#accueil"><i class="fas fa-house"></i> Accueil</a></li>
+        <li><a href="#projets"><i class="fas fa-rocket"></i> Projets</a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
       </ul>
     </nav>
+
   </header>
 
   <main>
     <p>Contenu de la page...</p>
   </main>
 
+
+  <footer>
+    <i class="fab fa-github"></i>
+    <i class="fab fa-linkedin"></i>
+    <i class="fab fa-twitter"></i>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>
